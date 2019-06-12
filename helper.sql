@@ -47,17 +47,17 @@ INSERT INTO users (id, login, active, email, group_id, name, gender, date_create
 INSERT INTO orders (id, user_id, description) VALUE
 (1, 4, 'Хочу купить велосипед и байк');
 
-# Изменение существующих полей в созданной таблице
+-- Изменение существующих полей в созданной таблице
 ALTER TABLE users MODIFY gender ENUM('M', 'F');
 
-# Если AFTER указывать, то автоматически добавит в конец, после последнего
+-- Если AFTER указывать, то автоматически добавит в конец, после последнего
 ALTER TABLE users ADD sname VARCHAR(255) DEFAULT '' AFTER date_create;
 
-# Если необходимо создать ограничение по внешнему ключу, которое не создано при создании таблицы
+-- Если необходимо создать ограничение по внешнему ключу, которое не создано при создании таблицы
 ALTER TABLE orders
 ADD CONSTRAINT orders_user_id FOREIGN KEY (user_id) REFERENCES users (id);
 
-# Если требуется убрать ограничение по внешнему ключу
+-- Если требуется убрать ограничение по внешнему ключу
 -- ALTER TABLE orders
 -- DROP FOREIGN KEY orders_user_id;
 
