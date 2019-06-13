@@ -47,6 +47,12 @@ INSERT INTO users (id, login, active, email, group_id, name, gender, date_create
 INSERT INTO orders (id, user_id, description) VALUE
 (1, 4, 'Хочу купить велосипед и байк');
 
+INSERT INTO orders (id, user_id, description) VALUES
+(2, 3, 'Скороварка'),
+(2, 3, 'Чайник'),
+(2, 3, 'Ножницы'),
+(3, 2, 'Компьютер');
+
 -- Изменение существующих полей в созданной таблице
 ALTER TABLE users MODIFY gender ENUM('M', 'F');
 
