@@ -49,9 +49,9 @@ INSERT INTO orders (id, user_id, description) VALUE
 
 INSERT INTO orders (id, user_id, description) VALUES
 (2, 3, 'Скороварка'),
-(2, 3, 'Чайник'),
-(2, 3, 'Ножницы'),
-(3, 2, 'Компьютер');
+(3, 3, 'Чайник'),
+(4, 3, 'Ножницы'),
+(5, 2, 'Компьютер');
 
 -- Изменение существующих полей в созданной таблице
 ALTER TABLE users MODIFY gender ENUM('M', 'F');
@@ -69,5 +69,5 @@ ADD CONSTRAINT orders_user_id FOREIGN KEY (user_id) REFERENCES users (id);
 
 -- Добавление и изменение значений в существующей таблице
 UPDATE users SET group_id = 1 WHERE id = 1;
-UPDATE users SET group_id = 2 WHERE id = 2;
+UPDATE users SET group_id = 3 WHERE id = 2;
 UPDATE users SET sname = 'Crack' WHERE id = 4;
