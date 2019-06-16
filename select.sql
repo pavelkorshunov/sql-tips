@@ -16,6 +16,9 @@ SELECT DISTINCT user_id FROM orders ORDER BY user_id;
 -- Чтобы подсчитать какое количество заказов сделал пользователь с одним id
 SELECT user_id, COUNT(*) count FROM orders GROUP BY user_id;
 
+-- Используем ограничение на выборку не более 3 пользователей
+SELECT * FROM users LIMIT 3;
+
 -- Подсчитаем количество заказов сделанное в каждом месяце 2019 года
 SELECT MONTH(date_create) month, COUNT(*) count FROM orders WHERE date_create BETWEEN '2019-01-01' AND '2019-12-31' GROUP BY month;
 
