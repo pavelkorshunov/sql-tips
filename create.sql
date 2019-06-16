@@ -28,7 +28,8 @@ DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (
     id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
-    description TEXT
+    description TEXT,
+    date_create DATETIME DEFAULT NOW()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Добавление новых значений в таблицу. Для добавления отдельных значений в таблицу есть UPDATE
@@ -47,11 +48,12 @@ INSERT INTO users (id, login, active, email, group_id, name, gender, date_create
 INSERT INTO orders (id, user_id, description) VALUE
 (1, 4, 'Хочу купить велосипед и байк');
 
-INSERT INTO orders (id, user_id, description) VALUES
-(2, 3, 'Скороварка'),
-(3, 3, 'Чайник'),
-(4, 3, 'Ножницы'),
-(5, 2, 'Компьютер');
+INSERT INTO orders (id, user_id, description, date_create) VALUES
+(2, 3, 'Скороварка', '2020-04-05 22:15:18'),
+(3, 3, 'Чайник', '2019-05-05 10:15:18'),
+(4, 3, 'Ножницы', '2019-06-05 12:15:18'),
+(5, 4, 'Сапоги', '2019-07-05 12:16:18'),
+(6, 2, 'Компьютер', '2019-06-05 23:15:18');
 
 -- Изменение существующих полей в созданной таблице
 ALTER TABLE users MODIFY gender ENUM('M', 'F');
