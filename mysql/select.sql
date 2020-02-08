@@ -14,7 +14,10 @@ SELECT user_id FROM orders GROUP BY user_id;
 SELECT DISTINCT user_id FROM orders ORDER BY user_id;
 
 -- Чтобы подсчитать какое количество заказов сделал пользователь с одним id
-SELECT user_id, COUNT(*) count FROM orders GROUP BY user_id;
+SELECT user_id, COUNT(*) how_many FROM orders GROUP BY user_id;
+
+-- Выбираем всех пользователей у которых количество заказов больше 1 с помощью HAVING
+SELECT user_id, COUNT(*) how_many FROM orders GROUP BY user_id HAVING COUNT(*) > 1;
 
 -- Используем ограничение на выборку не более 3 пользователей
 SELECT * FROM users LIMIT 3;
