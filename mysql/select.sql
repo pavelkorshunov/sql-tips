@@ -63,3 +63,6 @@ SELECT id, email, name FROM users WHERE id IN(SELECT user_id FROM orders);
 
 -- Пример подзапроса с ключевым словом NOT IN. Выбираем всех пользователей, которые не делали заказов
 SELECT id, email, name FROM users WHERE id NOT IN(SELECT user_id FROM orders);
+
+-- Объяснение выполнения запроса
+EXPLAIN SELECT id, email, name FROM users WHERE id NOT IN(SELECT user_id FROM orders);
