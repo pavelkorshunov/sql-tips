@@ -6,6 +6,7 @@ CREATE TABLE orders (
     description TEXT
 );
 
+-- Таблица пользователей
 DROP TABLE IF EXISTS users;
 DROP TYPE IF EXISTS active;
 CREATE TYPE active AS ENUM('Y', 'N');
