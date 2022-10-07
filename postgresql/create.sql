@@ -23,8 +23,10 @@ CREATE TABLE users (
 INSERT INTO "orders" ("id", "user_id", "description") VALUES 
 (1, 1, 'Носки'),
 (2, 1, 'Яблоко'),
-(3, 2, 'Яблоко');
+(3, 2, 'Яблоко'),
+(4, 4, 'Арбуз');
 
 INSERT INTO "users" ("id", "active", "login", "email", "name", "created_at", "updated_at") VALUES 
 (1, 'Y', 'admin', 'admin@mail.ru', 'Admin', '2022-08-11 07:58:19', '2022-08-11 07:58:19'),
-(2, 'Y', 'manager', 'manager@mail.ru', 'Manager', '2022-08-11 07:58:19', '2022-08-11 07:58:19');
+(2, 'Y', 'manager', 'manager@mail.ru', 'Manager', '2022-08-11 07:58:19', '2022-08-11 07:58:19'),
+(3, 'Y', 'user', 'user@mail.ru', 'User', '2022-08-11 07:58:19', '2022-08-11 07:58:19');
